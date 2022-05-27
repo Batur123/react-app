@@ -19,20 +19,28 @@ export const CoinPrice = ({coinSymbol}) => {
     }, [coinSymbol]);
 
     if (typeof coinSymbol === "boolean" || coinSymbol === undefined) {
-        return <h3>Cannot load this section..</h3>;
+        return (
+            <div id="error" style={{margin: '10px', border: "1px solid black"}}>
+                <h3>Cannot load this section.</h3>
+            </div>
+        );
     }
 
     if (coinPrice === null) {
-        return <h3>{coinSymbol} market data is loading.</h3>;
+        return (
+            <div id="error" style={{margin: '10px', border: "1px solid black"}}>
+                <h3>{coinSymbol} market data is loading.</h3>
+            </div>
+        );
     }
 
     return (
-        <div>
-            <p>Symbol: {coinPrice.symbol}</p>
-            <p>Price Change: {coinPrice.priceChange}</p>
-            <p>Volume: {coinPrice.quoteVolume}</p>
-            <p>High Price: {coinPrice.highPrice}</p>
-            <p>Last Price: {coinPrice.lastPrice}</p>
+        <div id={coinSymbol} style={{margin: '10px', border: "1px solid black"}}>
+            <h3>Coin Symbol: {coinSymbol}</h3>
+            <span style={{fontSize: "20px"}}>Price Change: </span><span>{coinPrice.priceChange}</span><br/>
+            <span style={{fontSize: "20px"}}>Volume: </span><span>{coinPrice.quoteVolume}</span><br/>
+            <span style={{fontSize: "20px"}}>High Price: </span><span>{coinPrice.highPrice}</span><br/>
+            <span style={{fontSize: "20px"}}>Last Price: </span><span>{coinPrice.lastPrice}</span><br/>
         </div>
     )
 }
