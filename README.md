@@ -1,2 +1,2 @@
-# React Learning Example
+## Cryptocoin Prices from BinanceAPI
 
