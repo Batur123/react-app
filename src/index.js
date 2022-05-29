@@ -20,18 +20,3 @@ const RenderCoinPage = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RenderCoinPage />);
-
-
-/*
-root.render(
-  <React.StrictMode>
-      <CoinPrice coinSymbol="ETHUSDT" />
-
-      <CoinPrice coinSymbol="BTCUSDT" />
-
-      <CoinPrice coinSymbol="LUNAUSDT" />
-
-      <CoinPrice />
-  </React.StrictMode>
-);
- */
